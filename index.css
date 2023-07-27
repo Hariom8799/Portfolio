@@ -14,13 +14,12 @@ html{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(images/background.png);
-    background-size: cover;
-    background-position: center;
+    background-color: black;
 }
 
 .container{
     padding: 10px 10%;
+    position: relative;
 }
 
 .logo {
@@ -87,6 +86,22 @@ nav ul li a:hover::after{
     color: crimson;
 }
 
+.user-image{
+    position: absolute;
+    top: 22%;
+    right: 5%;
+    padding: 2.5rem;
+    filter: grayscale(1);
+    transition: all 1s;
+    animation: imageScale 5s linear infinite;
+    border-radius: 15px;
+}
+
+.user-image img{
+    width: 345px;
+    height: 373px;
+    border-radius: 15px;
+}
 /* ------------------------About----------------------- */
 
 #about {
@@ -311,6 +326,22 @@ form .btn{
 
 /* ------------------------------Key frame animations -------------------- */
 
+@keyframes imageScale {
+    0%{
+        transform: scale(1);
+        filter: grayscale(0);
+    }
+    50%{
+        transform: scale(1.1);
+        filter: grayscale(1);
+        box-shadow: 3px 3px 10px gray;
+    }
+    100%{
+        transform: scale(1);
+        filter: grayscale(0);
+    }
+}
+
 @keyframes slideRight{
     0% {
         transform: translateX(-100px);
@@ -349,12 +380,51 @@ form .btn{
 nav .fa-solid{
     display: none;
 }
+
+@media only screen and (max-width: 1200px) {
+    .user-image{
+        padding: 1.5rem;
+        top: 23% ;
+        right: 12%;
+    }
+    .user-image img{
+        width: 300px;
+        height: 300px;
+    }
+    .designation{
+        margin-top: 8rem;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .user-image{
+        padding: 1rem;
+        top: 20% ;
+        right: 8%;
+    }
+    .user-image img{
+        width: 300px;
+        height: 300px;
+    }
+    .designation{
+        margin-top: 8rem;
+    }
+}
+
 @media only screen and (max-width:600px){
+    .user-image{
+        padding: .5rem;
+        top: 18%;
+        right: 25%;
+        z-index: 10;
+    }
+    .designation{
+        margin-top: 0;
+    }
     #header{
         background-image: url(images/phone-background.png);
     }
     .header-text{
-        margin-top: 100%;
+        margin-top: 90%;
         font-size: 16px;
     }
     .header-text h1{
@@ -365,6 +435,7 @@ nav .fa-solid{
         font-size: 25px;
     }
     nav ul{
+        z-index: 20;
         background: crimson;
         width: 200px;
         position: fixed;
