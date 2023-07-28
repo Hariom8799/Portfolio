@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;}
 
-body{
+.wrapper{
     background-color: #080808;
     color: white;
+    overflow-x: hidden;
 }
 html{
     scroll-behavior: smooth;
@@ -15,11 +17,12 @@ html{
     width: 100%;
     height: 100vh;
     background-color: black;
+    position: relative;
 }
 
 .container{
     padding: 10px 10%;
-    position: relative;
+    
 }
 
 .logo {
@@ -88,8 +91,8 @@ nav ul li a:hover::after{
 
 .user-image{
     position: absolute;
-    top: 22%;
-    right: 5%;
+    top: 18%;
+    right: 10%;
     padding: 2.5rem;
     filter: grayscale(1);
     transition: all 1s;
@@ -397,35 +400,43 @@ nav .fa-solid{
 }
 @media only screen and (max-width: 900px) {
     .user-image{
-        padding: 1rem;
+        position: absolute;
+        padding: 1.5rem;
         top: 20% ;
-        right: 8%;
+        right: 28%;
     }
     .user-image img{
-        width: 300px;
-        height: 300px;
+        width: 345px;
+        height: 373px;
     }
     .designation{
-        margin-top: 8rem;
+        margin-top: 0;
+    }
+    .header-text{
+        position: absolute;
+        bottom: 10%;
     }
 }
 
 @media only screen and (max-width:600px){
     .user-image{
-        padding: .5rem;
-        top: 18%;
-        right: 25%;
+        width: 250px;
+        left: 15%;
         z-index: 10;
+    }
+    .user-image img{
+        width: 250px;
+        height: 250px;
+        width: 100%;
     }
     .designation{
         margin-top: 0;
     }
-    #header{
-        background-image: url(images/phone-background.png);
-    }
+   
     .header-text{
-        margin-top: 90%;
-        font-size: 16px;
+        position: absolute;
+        bottom: 10%;
+        font-size: 20px;
     }
     .header-text h1{
         font-size: 25px;
